@@ -1,0 +1,46 @@
+< !DOCTYPE html><html lang="en"><head><meta charset="UTF-8"/><meta http-equiv="X-UA-Compatible"content="IE=edge"/><meta name="viewport"content="width=device-width, initial-scale=1.0"/><title>History push and replace state</title><link rel="stylesheet"href="./main.css"/></head><body><header><h1><code>history.pushState()</code>AND <code>history.replaceState()</code></h1><h2>Parameters <code>(state, title[, url])</code></h2></header><main><p id="l1">Trigger One</p><p><a id="l2"href="#">Trigger Two</a></p><p><button id="l3">Trigger Three</button></p></main><script>document.addEventListener('DOMContentLoaded', ()=> {
+        document.getElementById('l1').addEventListener('click', goOne);
+        document.getElementById('l2').addEventListener('click', goTwo);
+        document.getElementById('l3').addEventListener('click', goThree);
+        console.log(history.state);
+    }
+
+);
+
+function goOne(ev) {
+    ev.stopPropagation();
+
+    history.replaceState( {
+            id: 1
+        }
+
+        , '', 'http://127.0.0.1:5500/hello');
+    document.title='new string';
+}
+
+function goTwo(ev) {
+    ev.preventDefault();
+
+    history.pushState( {
+            id: 234
+        }
+
+        , '', 'another.html');
+}
+
+function goThree(ev) {
+    ev.preventDefault();
+    let num=Math.floor(Math.random() * 10000);
+
+    history.pushState( {
+            id: num
+        }
+
+        , '', `#$ {
+            num
+        }
+
+        `);
+}
+
+</script></body></html>

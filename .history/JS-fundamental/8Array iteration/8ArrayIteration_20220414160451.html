@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array iteration: 8 methods</title>
+</head>
+<body>
+    <h1>Array iteration: 8 methods</h1>
+    <script>
+// forEach：对数组中的每一项都做些XXX处理
+[1, 2, 3].forEach(function (item, index) {
+  console.log(item, index);
+});
+
+
+// map：对数组中的每一项都做些XXX处理，不会修改原数组，返回一个新数组
+const three = [1, 2, 3];
+const doubled = three.map(function (item) {
+  return item * 2;
+});
+console.log(doubled);
+
+
+// filter：检查数组中的每个项目，传入某种条件以查看它是真还是假，如果为真，将项目放回数组，如果为假，不会将项目放回数组。
+//filter 不会修改原数组，会返回一个新数组
+const ints = [1, 2, 3];
+const evens = ints.filter(function (item) {
+  return item % 2 === 0;
+});
+console.log(evens);
+
+
+// reduce：对每一项做一些XXX处理，然后将结果与数组的下一项一起传给下一次迭代，返回迭代的最终的值
+const sum = [1, 2, 3].reduce(function (result, item) {
+  return result + item;
+}, 0);
+console.log(sum)
+
+
+// some：检查数组是否有任何项目满足XXX条件，返回bool
+const hasNegativeNumbers = [1, 2, 3, -1, 4].some(function (item) {
+  return item < 0;
+});
+console.log(hasNegativeNumbers);
+
+
+// every：检查数组每一项都必须满足条件，返回bool
+const allPositiveNumbers = [1, 2, -3].every(function (item) {
+  return item > 0;
+});
+console.log(allPositiveNumbers);
+
+
+// find：搜索数组中的每个项目并根据条件检查他，如果为真，返回该项目，如果没有找到该项目，返回undefined
+const objects = [{ id: 'a' }, { id: 'b' }, { id: 'c' }];
+const found = objects.find(function (item) {
+  return item.id === 'b';
+});
+console.log(found);
+
+
+// find index：搜索索引，不是返回项目，而是返回项目的索引
+const objects2 = [{ id: 'a' }, { id: 'b' }, { id: 'c' }];
+const foundIndex = objects2.findIndex(function (item) {
+  return item.id === 'b';
+});
+console.log(foundIndex)
+    </script>
+</body>
+</html>

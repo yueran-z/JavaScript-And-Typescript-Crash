@@ -1,0 +1,19 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.parent{
+    background-color: #23424A;
+    padding: 50px;
+
+    margin: 0 auto;
+    width : 80%;
+}
+.child {
+    background-color: #38CFD9;
+    width : 50%;
+    height : 250px;
+}

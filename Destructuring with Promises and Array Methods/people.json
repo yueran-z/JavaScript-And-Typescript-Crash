@@ -1,0 +1,6 @@
+[
+  { "id": 1, "name": "Leonard", "phd": true, "partner": "Penny" },
+  { "id": 2, "name": "Howard", "phd": false, "partner": "Bernadette" },
+  { "id": 3, "name": "Sheldon", "phd": true, "partner": "Amy" },
+  { "id": 4, "name": "Raj", "phd": true, "partner": "Cinnamon" }
+]

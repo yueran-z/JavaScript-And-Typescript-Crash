@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Names</title>
+    <link rel="stylesheet" href="shared.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Page Two</h1>
+      <h2>The OTHER page</h2>
+    </header>
+    <main>
+      <ul id="list">
+        <!-- this will be the list of names -->
+      </ul>
+      <section>
+        <form name="editForm" action="#">
+          <h3>Replace a Name</h3>
+          <p>
+            <label for="old">Old Name</label>
+            <input
+              type="text"
+              readonly
+              id="old"
+              placeholder="click a name to edit"
+            />
+          </p>
+          <p>
+            <label for="new">New Value</label>
+            <input type="text" id="new" placeholder="new spelling for name" />
+          </p>
+          <p>
+            <button id="btnUpdate">Save Update</button>
+          </p>
+        </form>
+      </section>
+    </main>
+    <script src="main.js"></script>
+    <script>
+      const key = 'somewhat-shared-names-of-the-day';
+
+      document.addEventListener('DOMContentLoaded', () => {
+        //script specific to THIS page
+        let list = document.querySelector('#list');
+        //set up localstorage
+        APP.init(key).getStorage();
+        //add listeners
+        list.addEventListener('click', chooseName);
+        document.editForm.addEventListener('submit', saveChange);
+        //populate data
+        APP.buildList(list);
+        //storage event
+        window.addEventListener('storage', (ev) => {
+          console.log({ ev });
+          let targetURL = new URL(ev.url);
+          if (location.pathname != targetURL.pathname) {
+            //came from another page
+            APP.getStorage().buildList(list);
+          }
+        });
+      });
+
+      function chooseName(ev) {
+        let item = ev.target;
+        if (item.tagName !== 'LI') return;
+        let nm = item.textContent;
+        document.getElementById('old').value = nm;
+        document.getElementById('new').value = '';
+        document.getElementById('new').focus();
+      }
+
+      function saveChange(ev) {
+        ev.preventDefault();
+        //update a localstorage value based on old and new value
+        let oldName = document.getElementById('old').value;
+        let newName = document.getElementById('new').value.trim();
+        if (oldName && newName) {
+          APP.updateName(oldName, newName);
+          document.editForm.reset();
+          APP.buildList(document.getElementById('list'));
+        } else {
+          //need a name
+        }
+      }
+    </script>
+  </body>
+</html>

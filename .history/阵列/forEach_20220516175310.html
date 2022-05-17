@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    const people = [
+    {
+        name: 'Amy',
+        order: "红烧肉",
+        price: 35
+    },
+        {
+        name: 'bob',
+        order: "红烧鱼",
+        price: 40
+    },
+        {
+        name: 'candy',
+        order: "红烧茄子",
+        price: 15
+    },
+        {
+        name: 'dog',
+        order: "红烧猪蹄",
+        price: 70
+    }
+    ]
+
+//for each不可以break,点菜了，先看看列出的所有菜单
+people.forEach(function(obj,index){console.log(obj,index);});
+
+//2.今天打八折，所有菜单有一个新价格
+const newPrice = [];
+people.forEach(function(obj,index){
+    newPrice[index] = {
+        ...obj,
+        new_price:obj.
+    }
+    console.log(obj,index)})
+</script>
+</body>
+</html>

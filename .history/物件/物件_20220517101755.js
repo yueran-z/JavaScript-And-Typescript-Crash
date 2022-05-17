@@ -1,0 +1,2 @@
+var obj = {a:1};
+var copy = Object.assign({}, obj)
