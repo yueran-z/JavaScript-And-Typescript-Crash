@@ -4,7 +4,7 @@ var obj100 ={
     name: 'something',
     age: 42
 }
-console.log(Object.prototype.hasOwnProperty(obj100.name))
+console.log(Object.hasOwnProperty(obj100.name))
 
 
 // 检查物件的原型

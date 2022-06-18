@@ -28,6 +28,7 @@
             
         }
     }
+
      // 不是方法，而是流程:for in 取出值数组
     for (let val of people) {
         console.log(val)
@@ -37,6 +38,8 @@
     people.forEach(function (obj, index) {
         console.log(obj, index);
     });
+
+    
 
     //2.今天打八折，所有菜单有一个新价格
     const newPrice = [];
@@ -55,7 +58,6 @@
     ))
     console.log(newOrders)
 
-    
 
     //3.消费满80免费送鸡蛋
     const newOrder = [];
@@ -64,7 +66,7 @@
             newOrder.push(obj)
         }
     })
-// 
+
     const newOrder4 = people.filter(function (obj, index) {
         return item.price >= 80
     })
