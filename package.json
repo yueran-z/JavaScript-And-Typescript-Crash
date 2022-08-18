@@ -1,0 +1,25 @@
+{
+  "name": "js-crash",
+  "version": "1.0.0",
+  "description": "![object防止被修改的示例](https://github.com/yueran-z/JS-crash/blob/master/1-1-4.jpg?raw=true)",
+  "main": "NestedLoopWithArrayandObject.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yueran-z/JavaScript-And-Typescript-Crash.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yueran-z/JavaScript-And-Typescript-Crash/issues"
+  },
+  "homepage": "https://github.com/yueran-z/JavaScript-And-Typescript-Crash#readme",
+  "dependencies": {
+    "ts-node": "^10.8.1"
+  },
+  "devDependencies": {
+    "typescript": "^4.7.4"
+  }
+}

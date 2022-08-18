@@ -1,2 +1,0 @@
-var obj = {a:1};
-var copy = O

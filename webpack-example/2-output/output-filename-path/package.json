@@ -1,0 +1,14 @@
+{
+  "name": "output-filename-path",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build:argv": "webpack --output-filename js/bundle.js",
+    "build:file": "webpack --config webpack.config.demo.js"
+  },
+  "devDependencies": {
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
+  }
+}
